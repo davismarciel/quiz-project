@@ -21,5 +21,8 @@ module.exports = {
     'no-unused-vars': 'off',
     'react/function-component-definition': 'off',
     'arrow-body-style': 'off',
+    'react/prop-types': 'off',
+    'react/jsx-no-constructed-context-values': 'off',
+    'react/jsx-one-expression-per-line': 'off',
   },
 };
