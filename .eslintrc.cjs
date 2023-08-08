@@ -24,5 +24,6 @@ module.exports = {
     'react/prop-types': 'off',
     'react/jsx-no-constructed-context-values': 'off',
     'react/jsx-one-expression-per-line': 'off',
+    'prefer-const': 'off',
   },
 };
