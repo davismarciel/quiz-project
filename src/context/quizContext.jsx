@@ -1,5 +1,3 @@
-/* eslint-disable no-case-declarations */
-/* eslint-disable react/jsx-filename-extension */
 import { useContext, createContext, useReducer } from 'react';
 import questions from '../data/questions';
 
@@ -10,7 +8,7 @@ const initialState = {
   questions,
   currentQuestion: 0,
   score: 0,
-  answerSelector: false,
+  answerSelected: false,
 };
 
 const quizReducer = (state, action) => {
@@ -42,6 +40,23 @@ const quizReducer = (state, action) => {
         ...state,
         currentQuestion: nextQuestion,
         gameStage: endGame ? STAGES[2] : state.gameStage,
+        answerSelected: false,
+      };
+
+    case 'CHECK_ANSWER':
+      if (state.answerSelected) return state;
+
+      const rightAnswer = action.payload.answer;
+      const userAnswer = action.payload.option;
+
+      let correctAnswers = 0;
+
+      if (rightAnswer === userAnswer) correctAnswers = 1;
+
+      return {
+        ...state,
+        score: state.score + correctAnswers,
+        answerSelected: userAnswer,
       };
 
     case 'NEW_GAME':

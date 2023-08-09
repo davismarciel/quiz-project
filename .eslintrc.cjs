@@ -25,5 +25,9 @@ module.exports = {
     'react/jsx-no-constructed-context-values': 'off',
     'react/jsx-one-expression-per-line': 'off',
     'prefer-const': 'off',
+    'jsx-a11y/click-events-have-key-events': 'off',
+    'react/jsx-filename-extension': 'off',
+    'no-case-declarations': 'off',
+    'jsx-a11y/no-static-element-interactions': 'off',
   },
 };
