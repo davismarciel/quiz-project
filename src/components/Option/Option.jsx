@@ -3,9 +3,11 @@ import { QuizContext } from '../../context/quizContext';
 
 import './Option.css';
 
-const Option = () => {
+const Option = ({ option }) => {
   return (
-    <div>Option</div>
+    <div className="option">
+      <p>{option}</p>
+    </div>
   );
 };
 

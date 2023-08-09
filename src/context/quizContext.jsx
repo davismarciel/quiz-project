@@ -10,6 +10,7 @@ const initialState = {
   questions,
   currentQuestion: 0,
   score: 0,
+  answerSelector: false,
 };
 
 const quizReducer = (state, action) => {

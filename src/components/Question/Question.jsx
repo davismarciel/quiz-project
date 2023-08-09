@@ -1,6 +1,8 @@
 import { useContext, useEffect } from 'react';
 import { QuizContext } from '../../context/quizContext';
 
+import Option from '../Option/Option';
+
 import './Question.css';
 
 const Question = () => {
@@ -17,7 +19,10 @@ const Question = () => {
       <p>Question {quizState.currentQuestion + 1} out of {quizState.questions.length}</p>
       <h2>{currentQuestion.question}</h2>
       <div id="options-container">
-        <p>Options</p>
+        <p>{currentQuestion.options.map((option) => (
+          <Option option={option} key={option} />
+        ))}
+        </p>
       </div>
       <button onClick={() => dispatch({ type: 'CHANGE_QUESTION' })} type="button">Next</button>
     </div>
